@@ -37,9 +37,14 @@ export interface IAuthor {
   };
 }
 
+export interface ICategory {
+  name: string;
+}
+
 export interface IArticle {
   slug: string;
   authors: IAuthor[];
+  categories: ICategory[];
   excerpt: string;
   body: string;
   id: string;
@@ -76,6 +81,7 @@ export type Template = React.FC<{
   pageContext: {
     article: IArticle;
     authors: IAuthor[];
+    categories: ICategory[];
     mailchimp: boolean;
     next: IArticle[];
   };
